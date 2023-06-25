@@ -8,8 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="img/babelfish_icon.png">
-    <title>John Hair | Babel Fish</title>
+    <title>John Hair | Template</title>
   </head>
   <body>
     <div class="bg-light">
@@ -45,163 +44,43 @@
       <br>
       <br>
       <br>
-      <!-- <div class="alert alert-warning fade show" role="alert">
+      <div class="alert alert-warning fade show" role="alert">
         <strong>This is unfinished!</strong> <br> I will continue to work on finishing this description soon.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div> -->
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+      </div>
       <div id="main">
-        <h1 class="page-title"><b><u>The Babel Fish</u></b></h1>
-
-        <br>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/oPWSf2R-A_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h1 class="page-title"><b><u>8-bit Microcontoller on an FPGA</u></b></h1>
           <br>
 
-          <h2><b>Inspiration</b></h2>
-          <br>
-          <p style="font-size: 20px;">The Babel Fish from Hitchhiker's Guide to the Galaxy. 
-            The babel fish is a fish-looking device that you can stick in your ear to translate any alien language to your language. 
-            Our team thought it would be awesome to bring this to real life. 
+          <h2><b>Project Description</b></h2>
+          
+          <p style="font-size: 20px;">
+            For our FPGA class, we were tasked with a semester-long project to design an 8-bit microcontroller, broken down to its components. 
           </p>
           <br>
-
-          <h2><b>What it does</b></h2>
+          
+          <h2><b>Modules</b></h2>
           <br>
-          <p style="font-size: 20px;">
-            The babel fish in the book/movie takes in the audio and somehow translates it to another language. 
-            Sadly, computers don't do this, so we had to do it in a programmatic way. 
-            How our device works is the user will use their phone, which is connected to the raspberry pi, and record the audio they want to be translated. 
-            Once they hit the stop recording button, the audio recording is sent to the raspberry pi for translation.
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            On the raspberry pi, we have a python script, that uses the AssemblyAI API to get the transcript of the audio, which then passes this to the translation function. 
-            This translation function uses a python library called Deep-Translator, which allows the usage of any translation platform. For our python script, we decided to go with Google Translate since it is the most trusted. 
-            Once the text is translated, it is sent to the app and then 
+          <h3>Arithmetic Logic Unit (ALU)</h3>
+          <p style="font-size: 20px;">Template
           </p>
           <br>
 
-          <h2><b>How We Built It</b></h2>
-          <br>
-          <p style="font-size: 20px;">
-            For the app interface, we decided to go with Flutter due to its idea of write once, build to many. 
-            Nyle could now build the same code to iOS and John could build to android. 
-            We required some dependencies with the flutter. 
-            How the app would work is that the user would hit the record button, which would start recording an audio file in the format .wav. 
-            Once the user hits the stop button, the audio recording is saved to the phone and sent to the raspberry pi.
-          </p>
-          <p style="font-size: 20px;">
-            For the backend, we used a raspberry pi to run a python script that can take in audio and translate it. 
-            So, the raspberry pi will listen for the phone and once it receives the audio file, it will run the python code. 
-            How the code works is it sends the audio file to the AssemblyAI server. 
-            Once it is there, I retrieve the id for that audio and send a request for a transcript. 
-            Once I submit an initial request, the code runs a while loop that checks the status of the transcript until it is set to "complete", which then sends that text to the translate function. 
-            For the translate function, we used a library that allows us to use google translate services, and translates to the target language.
+          <h3>Program Counter (PC)</h3>
+          <p style="font-size: 20px;">Template
           </p>
           <br>
 
-          <h2><b>Challenges We Ran Into</b></h2>
-          <br>
-          <p style="font-size: 20px;">
-            One main issue we had was using the raspberry pi. 
-            Due to it having an outdated processor architecture, we were unable to set up a node server to listen for the phone. 
-            This issue is the reason why we were not able to actually send an audio recording to the raspberry pi. 
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            Another issue that we had was dealing with SDK version conflicts. 
-            For the recording part of the app, we were going to use a library called "sound_lite". 
-            However, we were getting errors with using this library and were running out of time when trying to fix it.
-          </p>
-
-          <h2><b>Accomplishments That We're Proud of</b></h2>
-          <br>
-          <p style="font-size: 20px;">
-            For the raspberry pi, we're proud to be able to translate to all supported languages off of one single audio file. 
-            Since we are new to hackathons and have a lack of experience, learning how to do HTTP requests for the first time successfully was quite an accomplishment.
+          <h3>Register File</h3>
+          <p style="font-size: 20px;">Template
           </p>
           <br>
 
-          <p style="font-size: 20px;">
-            Another thing we're proud of is learning how to use dart and flutter while working on our project. 
-            Although it is made to be easy, it can quite frustrating to use and definitely takes a lot of patience. 
-            So, the fact that we have a tangible app we can show is something we're very proud of.
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            For the CAD designs of the project, we are quite proud of what we were able to do. 
-            Being able to give a detailed design, showing where the raspberry pi would go, and relearning the software definitely took some effort that we are proud to present.
+          <h3>Control Logic</h3>
+          <p style="font-size: 20px;">Template
           </p>
           <br>
 
-          <h2><b>What We Learned</b></h2>
-          <br>
-          <p style="font-size: 20px;">
-            For the back end, we learned how to submit HTTP requests, mainly how to send get and post requests, and how to use the response from those requests. 
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            For the app, we were able to learn a sufficient amount of dart in order to create the GUI of the app interface.
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            For the CAD designs, we had to relearn how to use Inventor in order to create a well developed product to communicate our idea, and even possibly build.
-          </p>
-          <br>
-
-          <h2><b>Links</b></h2>
-          <div class="list-group">
-            <a href="https://devpost.com/software/babel-fish-z2vdh6?ref_content=my-projects-tab&ref_feature=my_projects" class="list-group-item list-group-item-action">
-              The Devpost Project Post
-            </a>
-            <a href="https://github.com/hairjd2/babelfish" class="list-group-item list-group-item-action">
-              Github
-            </a>
-            <a href="https://www.youtube.com/embed/oPWSf2R-A_U" class="list-group-item list-group-item-action">
-              Youtube Video
-            </a>
-          </div>
-
-          <!-- <div class="bd-example carousel-fade carousel-dark">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="..." class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="..." class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="..." class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>...</h5>
-                    <p>...</p>
-                  </div>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>           -->
       </div>
       <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-bottom">
         <a class="navbar-brand" style="color: white">Contacts: </a>

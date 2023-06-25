@@ -8,8 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="img/babelfish_icon.png">
-    <title>John Hair | Babel Fish</title>
+    <link rel="icon" href="img/Key-Lime-Pie-NEW-7s.jpg">
+    <title>John Hair | KeyLimePi</title>
   </head>
   <body>
     <div class="bg-light">
@@ -50,115 +50,81 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div> -->
       <div id="main">
-        <h1 class="page-title"><b><u>The Babel Fish</u></b></h1>
+        <h1 class="page-title"><b><u>KeyLimePi</u></b></h1>
 
         <br>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/oPWSf2R-A_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/t8jUWY_7cow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <br>
 
           <h2><b>Inspiration</b></h2>
           <br>
-          <p style="font-size: 20px;">The Babel Fish from Hitchhiker's Guide to the Galaxy. 
-            The babel fish is a fish-looking device that you can stick in your ear to translate any alien language to your language. 
-            Our team thought it would be awesome to bring this to real life. 
-          </p>
+          <p style="font-size: 20px;">We were inspired to produce a product that required heavy uses of security, while also ensuring ease of use by the user.</p>
           <br>
 
           <h2><b>What it does</b></h2>
           <br>
           <p style="font-size: 20px;">
-            The babel fish in the book/movie takes in the audio and somehow translates it to another language. 
-            Sadly, computers don't do this, so we had to do it in a programmatic way. 
-            How our device works is the user will use their phone, which is connected to the raspberry pi, and record the audio they want to be translated. 
-            Once they hit the stop recording button, the audio recording is sent to the raspberry pi for translation.
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            On the raspberry pi, we have a python script, that uses the AssemblyAI API to get the transcript of the audio, which then passes this to the translation function. 
-            This translation function uses a python library called Deep-Translator, which allows the usage of any translation platform. For our python script, we decided to go with Google Translate since it is the most trusted. 
-            Once the text is translated, it is sent to the app and then 
+            The keylimepi is a 2FA token device with a built in password manager that the user can use to store their passwords and usernames for websites in a more secure way. 
+            Having it stored locally on the device means that the passwords are securely stored on a physical device instead of being stored on the open internet like most 
+            traditional password managers. In order for the user to interact with the device, meaning they can create and view passwords, 
+            we developed a GUI that connects through serial port with the SSH protocol in order to run code that only sits on the raspberry pi.
           </p>
           <br>
 
           <h2><b>How We Built It</b></h2>
           <br>
           <p style="font-size: 20px;">
-            For the app interface, we decided to go with Flutter due to its idea of write once, build to many. 
-            Nyle could now build the same code to iOS and John could build to android. 
-            We required some dependencies with the flutter. 
-            How the app would work is that the user would hit the record button, which would start recording an audio file in the format .wav. 
-            Once the user hits the stop button, the audio recording is saved to the phone and sent to the raspberry pi.
-          </p>
-          <p style="font-size: 20px;">
-            For the backend, we used a raspberry pi to run a python script that can take in audio and translate it. 
-            So, the raspberry pi will listen for the phone and once it receives the audio file, it will run the python code. 
-            How the code works is it sends the audio file to the AssemblyAI server. 
-            Once it is there, I retrieve the id for that audio and send a request for a transcript. 
-            Once I submit an initial request, the code runs a while loop that checks the status of the transcript until it is set to "complete", which then sends that text to the translate function. 
-            For the translate function, we used a library that allows us to use google translate services, and translates to the target language.
+            We used a raspberry pi as our device to store the actual passwords and usernames. 
+            The user will interact with this device using a GUI we made with TKinter. TKinter runs functions in a ssh wrapper python script that calls functions that sit on the raspberry pi. 
+            This adds an extra layer of security as there are multiple passes the user has to make in order to change or access their passwords. 
+            We also added an extra user interface by displaying information on a provided LCD screen. This script runs on boot using a systemd service. 
+            We also developed a case for the keylimepi that was stress tested and actually 3D printed. 
+            This will provide protection to the device, making it more durable for the average person.
           </p>
           <br>
 
           <h2><b>Challenges We Ran Into</b></h2>
           <br>
           <p style="font-size: 20px;">
-            One main issue we had was using the raspberry pi. 
-            Due to it having an outdated processor architecture, we were unable to set up a node server to listen for the phone. 
-            This issue is the reason why we were not able to actually send an audio recording to the raspberry pi. 
+            The LCD screen was unable to receive data, only printing out white squares whenever running. 
+            After running debugging processes, we found that the backlight, the contrast and all components of the LCD screen work besides the actual data that is being sent. 
+            Another challenge we faced was when we had to quickly change a python library that only worked with Linux, but was overcome when another library was found and implemented.
+            Another issue was trying to connect via SSH over ethernet, which worked after debugging and running network protocols to see what connections could be made until we got the final product.
           </p>
           <br>
-          <p style="font-size: 20px;">
-            Another issue that we had was dealing with SDK version conflicts. 
-            For the recording part of the app, we were going to use a library called "sound_lite". 
-            However, we were getting errors with using this library and were running out of time when trying to fix it.
-          </p>
 
           <h2><b>Accomplishments That We're Proud of</b></h2>
           <br>
           <p style="font-size: 20px;">
-            For the raspberry pi, we're proud to be able to translate to all supported languages off of one single audio file. 
-            Since we are new to hackathons and have a lack of experience, learning how to do HTTP requests for the first time successfully was quite an accomplishment.
-          </p>
-          <br>
-
-          <p style="font-size: 20px;">
-            Another thing we're proud of is learning how to use dart and flutter while working on our project. 
-            Although it is made to be easy, it can quite frustrating to use and definitely takes a lot of patience. 
-            So, the fact that we have a tangible app we can show is something we're very proud of.
-          </p>
-          <br>
-          <p style="font-size: 20px;">
-            For the CAD designs of the project, we are quite proud of what we were able to do. 
-            Being able to give a detailed design, showing where the raspberry pi would go, and relearning the software definitely took some effort that we are proud to present.
+            We were able to connect our front end, back end, and our hardware to work seamlessly, with minor issues.
+            The proof of concept shows a successful potential of what the keylimepi can be.
           </p>
           <br>
 
           <h2><b>What We Learned</b></h2>
           <br>
           <p style="font-size: 20px;">
-            For the back end, we learned how to submit HTTP requests, mainly how to send get and post requests, and how to use the response from those requests. 
+            We were also proud of how much we learned for this project, either in learning how to write scripts that run commands over ssh, creating a GUI with TKinter, 
+            creating a connection with raspberry pi over ethernet via ssh, or designing a stress tested case for the device using cad software, along with a 3D printed model of design.
           </p>
           <br>
-          <p style="font-size: 20px;">
-            For the app, we were able to learn a sufficient amount of dart in order to create the GUI of the app interface.
-          </p>
+
+          <h2><b>Whats next for KeyLimePi</b></h2>
           <br>
           <p style="font-size: 20px;">
-            For the CAD designs, we had to relearn how to use Inventor in order to create a well developed product to communicate our idea, and even possibly build.
+            We hope to improve the security of the KeyLimePi even further by creating a asymetric encryption method between the client software and the user hardware, 
+            encrypting the json file that stores the passwords, requiring the use of the gui and the hardware to have access to the passwords.
           </p>
           <br>
 
           <h2><b>Links</b></h2>
           <div class="list-group">
-            <a href="https://devpost.com/software/babel-fish-z2vdh6?ref_content=my-projects-tab&ref_feature=my_projects" class="list-group-item list-group-item-action">
+            <a href="https://devpost.com/software/keylimepi" class="list-group-item list-group-item-action">
               The Devpost Project Post
             </a>
-            <a href="https://github.com/hairjd2/babelfish" class="list-group-item list-group-item-action">
+            <a href="https://github.com/hairjd2/keylimepi" class="list-group-item list-group-item-action">
               Github
-            </a>
-            <a href="https://www.youtube.com/embed/oPWSf2R-A_U" class="list-group-item list-group-item-action">
-              Youtube Video
             </a>
           </div>
 
